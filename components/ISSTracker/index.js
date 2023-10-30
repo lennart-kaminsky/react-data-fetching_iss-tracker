@@ -34,13 +34,17 @@ export default function ISSTracker() {
     return <h1>Loading...</h1>;
   }
 
+  function handleReload() {
+    mutate();
+  }
+
   return (
     <main>
       <Map longitude={data.longitude} latitude={data.latitude} />
       <Controls
         longitude={data.longitude}
         latitude={data.latitude}
-        onRefresh={() => mutate()}
+        onRefresh={handleRefresh}
       />
     </main>
   );
